@@ -20,6 +20,13 @@ public abstract class Figure implements Shape {
         this.shapes = shapes;
     }
 
+    protected Figure(Figure figure) {
+        this.gc = figure.gc;
+        this.x = figure.x;
+        this.y = figure.y;
+        this.shapes = figure.shapes;
+    }
+
     @Override
     public void move(Moves moves) {
         switch (moves) {

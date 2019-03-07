@@ -11,6 +11,10 @@ public class Ball extends Figure {
         super(gc, x, y, shapes);
     }
 
+    public Ball(Figure figure) {
+        super(figure);
+    }
+
     @Override
     public void draw() {
         gc.setFill(Color.RED);
