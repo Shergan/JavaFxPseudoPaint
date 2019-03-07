@@ -14,10 +14,13 @@ public class Triangle extends Figure {
     @Override
     public void draw() {
         gc.setFill(Color.BLUE);
+        gc.fillPolygon(new double[]{x + diameter / 2, x + diameter, x}, new double[]{y, y + diameter, y + diameter}, 3);
+    }
+
+    @Override
+    public void drawStroke() {
         gc.setStroke(Color.BLUE);
         gc.setLineWidth(2);
-
-        gc.fillPolygon(new double[]{x + diameter / 2, x + diameter, x}, new double[]{y, y + diameter, y + diameter}, 3);
         gc.strokePolygon(new double[]{x + diameter / 2, x + diameter, x}, new double[]{y, y + diameter, y + diameter}, 3);
     }
 }

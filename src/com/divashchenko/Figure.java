@@ -27,4 +27,6 @@ public abstract class Figure implements Shape {
 
     @Override
     public abstract void draw();
+
+    public abstract void drawStroke();
 }

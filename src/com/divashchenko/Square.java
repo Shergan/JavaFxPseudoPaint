@@ -14,10 +14,13 @@ public class Square extends Figure {
     @Override
     public void draw() {
         gc.setFill(Color.GREEN);
+        gc.fillRect(x, y, diameter, diameter);
+    }
+
+    @Override
+    public void drawStroke() {
         gc.setStroke(Color.GREEN);
         gc.setLineWidth(2);
-
-        gc.fillRect(x, y, diameter, diameter);
         gc.strokeRect(x, y, diameter, diameter);
     }
 

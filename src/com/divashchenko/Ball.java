@@ -14,10 +14,13 @@ public class Ball extends Figure {
     @Override
     public void draw() {
         gc.setFill(Color.RED);
+        gc.fillOval(x, y, diameter, diameter);
+    }
+
+    @Override
+    public void drawStroke() {
         gc.setStroke(Color.RED);
         gc.setLineWidth(2);
-
-        gc.fillOval(x, y, diameter, diameter);
         gc.strokeOval(x, y, diameter, diameter);
     }
 
