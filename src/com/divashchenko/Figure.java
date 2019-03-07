@@ -21,10 +21,7 @@ public abstract class Figure implements Shape {
     }
 
     protected Figure(Figure figure) {
-        this.gc = figure.gc;
-        this.x = figure.x;
-        this.y = figure.y;
-        this.shapes = figure.shapes;
+        this(figure.gc, figure.x, figure.y, figure.shapes);
         this.diameter = figure.diameter;
     }
 
