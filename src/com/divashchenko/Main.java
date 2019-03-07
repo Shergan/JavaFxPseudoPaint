@@ -51,6 +51,10 @@ public class Main extends Application {
                     board.addFigure(Board.Figures.TRIANGLE);
                     Logger.log("Add TRIANGLE");
                     break;
+                case ALT:
+                    board.changeFigure();
+                    Logger.log("Figure changed");
+                    break;
             }
         });
 
