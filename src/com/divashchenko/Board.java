@@ -80,6 +80,19 @@ public class Board {
         }
     }
 
+    public void cloneFigure() {
+        if (mainFigure != null) {
+            if (mainFigure instanceof Ball) {
+                shapes.add(new Ball(mainFigure));
+            } else if (mainFigure instanceof Square) {
+                shapes.add(new Square(mainFigure));
+            } else if (mainFigure instanceof Triangle) {
+                shapes.add(new Triangle(mainFigure));
+            }
+            mainFigure = (Figure) shapes.get(shapes.size() - 1);
+        }
+    }
+
     private void clean() {
         gc.clearRect(0, 0, gc.getCanvas().getWidth(), gc.getCanvas().getHeight());
     }

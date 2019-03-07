@@ -71,6 +71,10 @@ public class Main extends Application {
                 case LEFT:
                     board.move(Moves.LEFT);
                     break;
+                case C:
+                    board.cloneFigure();
+                    Logger.log("Figure copy");
+                    break;
             }
         });
 
