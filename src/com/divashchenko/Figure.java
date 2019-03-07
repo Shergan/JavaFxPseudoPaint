@@ -21,8 +21,21 @@ public abstract class Figure implements Shape {
     }
 
     @Override
-    public void move() {
-        //TODO move
+    public void move(Moves moves) {
+        switch (moves) {
+            case UP:
+                y += 5;
+                break;
+            case RIGHT:
+                x += 5;
+                break;
+            case DOWN:
+                y -= 5;
+                break;
+            case LEFT:
+                x -= 5;
+                break;
+        }
     }
 
     @Override

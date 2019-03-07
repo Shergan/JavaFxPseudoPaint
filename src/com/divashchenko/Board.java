@@ -20,10 +20,8 @@ public class Board {
         this.gc = gc;
     }
 
-    public void move() {
-        for (Shape shape : shapes) {
-            shape.move();
-        }
+    public void move(Moves moves) {
+        mainFigure.move(moves);
     }
 
     public void draw() {

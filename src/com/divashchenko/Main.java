@@ -59,6 +59,18 @@ public class Main extends Application {
                     board.deleteFigure();
                     Logger.log("Figure deleted");
                     break;
+                case UP:
+                    board.move(Moves.UP);
+                    break;
+                case RIGHT:
+                    board.move(Moves.RIGHT);
+                    break;
+                case DOWN:
+                    board.move(Moves.DOWN);
+                    break;
+                case LEFT:
+                    board.move(Moves.LEFT);
+                    break;
             }
         });
 
@@ -86,7 +98,7 @@ public class Main extends Application {
 
     private void drawFrame() {
         board.draw();
-        board.move();
+        //board.move();
     }
 
 }
