@@ -75,6 +75,14 @@ public class Main extends Application {
                     board.cloneFigure();
                     Logger.log("Figure copy");
                     break;
+                case PAGE_UP:
+                    board.resizePlus();
+                    Logger.log("resize +");
+                    break;
+                case PAGE_DOWN:
+                    board.resizeMinus();
+                    Logger.log("resize -");
+                    break;
             }
         });
 

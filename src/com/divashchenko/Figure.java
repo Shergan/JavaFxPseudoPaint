@@ -25,6 +25,7 @@ public abstract class Figure implements Shape {
         this.x = figure.x;
         this.y = figure.y;
         this.shapes = figure.shapes;
+        this.diameter = figure.diameter;
     }
 
     @Override

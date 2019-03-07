@@ -93,6 +93,20 @@ public class Board {
         }
     }
 
+    public void resizePlus() {
+        if (mainFigure != null) {
+            mainFigure.diameter += 5;
+        }
+    }
+
+    public void resizeMinus() {
+        if (mainFigure != null) {
+            if (mainFigure.diameter > 5) {
+                mainFigure.diameter -= 5;
+            }
+        }
+    }
+
     private void clean() {
         gc.clearRect(0, 0, gc.getCanvas().getWidth(), gc.getCanvas().getHeight());
     }
