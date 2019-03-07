@@ -41,12 +41,15 @@ public class Main extends Application {
             switch (event.getCode()) {
                 case DIGIT1:
                     board.addFigure(Board.Figures.BALL);
+                    Logger.log("Add BALL");
                     break;
                 case DIGIT2:
                     board.addFigure(Board.Figures.SQUARE);
+                    Logger.log("Add SQUARE");
                     break;
                 case DIGIT3:
                     board.addFigure(Board.Figures.TRIANLGE);
+                    Logger.log("Add TRIANGLE");
                     break;
             }
         });
