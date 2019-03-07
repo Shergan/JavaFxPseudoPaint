@@ -14,7 +14,7 @@ public class Triangle extends Figure {
     @Override
     public void draw() {
         gc.setFill(Color.BLUE);
-        gc.setStroke(Color.BLACK);
+        gc.setStroke(Color.BLUE);
         gc.setLineWidth(2);
 
         gc.fillPolygon(new double[]{x + diameter / 2, x + diameter, x}, new double[]{y, y + diameter, y + diameter}, 3);

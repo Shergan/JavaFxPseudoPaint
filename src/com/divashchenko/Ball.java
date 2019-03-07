@@ -14,7 +14,7 @@ public class Ball extends Figure {
     @Override
     public void draw() {
         gc.setFill(Color.RED);
-        gc.setStroke(Color.BLACK);
+        gc.setStroke(Color.RED);
         gc.setLineWidth(2);
 
         gc.fillOval(x, y, diameter, diameter);

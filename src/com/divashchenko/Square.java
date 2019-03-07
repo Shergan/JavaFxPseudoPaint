@@ -14,7 +14,7 @@ public class Square extends Figure {
     @Override
     public void draw() {
         gc.setFill(Color.GREEN);
-        gc.setStroke(Color.BLACK);
+        gc.setStroke(Color.GREEN);
         gc.setLineWidth(2);
 
         gc.fillRect(x, y, diameter, diameter);
