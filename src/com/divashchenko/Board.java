@@ -14,6 +14,7 @@ public class Board {
     private GraphicsContext gc;
 
     private List<Shape> shapes = new ArrayList<>();
+    private Figure mainFigure;
 
     public Board(GraphicsContext gc) {
         this.gc = gc;
@@ -27,8 +28,11 @@ public class Board {
 
     public void draw() {
         clean();
+        if (mainFigure != null) {
+            mainFigure.draw();
+        }
         for (Shape shape : shapes) {
-            shape.draw();
+            shape.drawStroke();
         }
     }
 
@@ -36,13 +40,26 @@ public class Board {
         switch (figures) {
             case BALL:
                 shapes.add(new Ball(gc, 10, 10, shapes));
+                mainFigure = (Figure) shapes.get(shapes.size() - 1);
                 break;
             case SQUARE:
                 shapes.add(new Square(gc, 10, 10, shapes));
+                mainFigure = (Figure) shapes.get(shapes.size() - 1);
                 break;
             case TRIANGLE:
-                shapes.add(new Triangle(gc, 10,10, shapes));
+                shapes.add(new Triangle(gc, 10, 10, shapes));
+                mainFigure = (Figure) shapes.get(shapes.size() - 1);
                 break;
+        }
+    }
+
+    public void changeFigure() {
+        if (mainFigure != null && shapes.size() > 1) {
+            try {
+                mainFigure = (Figure) shapes.get(shapes.indexOf(mainFigure) + 1);
+            } catch (IndexOutOfBoundsException e) {
+                mainFigure = (Figure) shapes.get(0);
+            }
         }
     }
 
