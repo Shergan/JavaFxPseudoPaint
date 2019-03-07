@@ -55,6 +55,10 @@ public class Main extends Application {
                     board.changeFigure();
                     Logger.log("Figure changed");
                     break;
+                case DELETE:
+                    board.deleteFigure();
+                    Logger.log("Figure deleted");
+                    break;
             }
         });
 
