@@ -13,8 +13,6 @@ public class Ball extends Figure {
 
     @Override
     public void draw() {
-        diameter = 30;
-
         gc.setFill(Color.RED);
         gc.setStroke(Color.BLACK);
         gc.setLineWidth(2);

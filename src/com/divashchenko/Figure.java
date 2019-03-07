@@ -6,7 +6,7 @@ import java.util.List;
 
 public abstract class Figure implements Shape {
 
-    protected double diameter;
+    protected double diameter = 30;
 
     protected GraphicsContext gc;
     protected double x;

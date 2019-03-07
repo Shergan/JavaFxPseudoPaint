@@ -13,8 +13,6 @@ public class Square extends Figure {
 
     @Override
     public void draw() {
-        diameter = 30;
-
         gc.setFill(Color.GREEN);
         gc.setStroke(Color.BLACK);
         gc.setLineWidth(2);
