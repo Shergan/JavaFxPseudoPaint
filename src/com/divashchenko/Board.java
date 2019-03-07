@@ -41,6 +41,7 @@ public class Board {
                 shapes.add(new Square(gc, 10, 10, shapes));
                 break;
             case TRIANLGE:
+                shapes.add(new Triangle(gc, 10,10, shapes));
                 break;
         }
     }
