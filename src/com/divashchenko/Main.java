@@ -48,7 +48,7 @@ public class Main extends Application {
                     Logger.log("Add SQUARE");
                     break;
                 case DIGIT3:
-                    board.addFigure(Board.Figures.TRIANLGE);
+                    board.addFigure(Board.Figures.TRIANGLE);
                     Logger.log("Add TRIANGLE");
                     break;
             }

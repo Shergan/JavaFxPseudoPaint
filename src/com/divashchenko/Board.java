@@ -8,7 +8,7 @@ import java.util.List;
 public class Board {
 
     public enum Figures {
-        BALL, SQUARE, TRIANLGE
+        BALL, SQUARE, TRIANGLE
     }
 
     private GraphicsContext gc;
@@ -40,7 +40,7 @@ public class Board {
             case SQUARE:
                 shapes.add(new Square(gc, 10, 10, shapes));
                 break;
-            case TRIANLGE:
+            case TRIANGLE:
                 shapes.add(new Triangle(gc, 10,10, shapes));
                 break;
         }
