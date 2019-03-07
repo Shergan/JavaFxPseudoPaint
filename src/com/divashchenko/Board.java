@@ -21,7 +21,9 @@ public class Board {
     }
 
     public void move(Moves moves) {
-        mainFigure.move(moves);
+        if (mainFigure != null) {
+            mainFigure.move(moves);
+        }
     }
 
     public void draw() {
