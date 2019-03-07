@@ -31,16 +31,24 @@ public abstract class Figure implements Shape {
     public void move(Moves moves) {
         switch (moves) {
             case UP:
-                y -= 5;
+                if (y > 0) {
+                    y -= 5;
+                }
                 break;
             case RIGHT:
-                x += 5;
+                if (x + diameter < gc.getCanvas().getWidth()) {
+                    x += 5;
+                }
                 break;
             case DOWN:
-                y += 5;
+                if (y + diameter < gc.getCanvas().getHeight()) {
+                    y += 5;
+                }
                 break;
             case LEFT:
-                x -= 5;
+                if (x > 0) {
+                    x -= 5;
+                }
                 break;
         }
     }
