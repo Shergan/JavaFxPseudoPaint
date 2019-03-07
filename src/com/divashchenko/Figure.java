@@ -24,13 +24,13 @@ public abstract class Figure implements Shape {
     public void move(Moves moves) {
         switch (moves) {
             case UP:
-                y += 5;
+                y -= 5;
                 break;
             case RIGHT:
                 x += 5;
                 break;
             case DOWN:
-                y -= 5;
+                y += 5;
                 break;
             case LEFT:
                 x -= 5;
