@@ -1,4 +1,4 @@
-package com.divashchenko;
+package com.divashchenko.Shapes;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;

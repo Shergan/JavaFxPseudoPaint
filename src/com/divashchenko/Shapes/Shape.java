@@ -1,4 +1,4 @@
-package com.divashchenko;
+package com.divashchenko.Shapes;
 
 public interface Shape {
     void move(Moves moves);

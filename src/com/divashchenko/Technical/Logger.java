@@ -1,4 +1,4 @@
-package com.divashchenko;
+package com.divashchenko.Technical;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

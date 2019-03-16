@@ -1,12 +1,13 @@
 package com.divashchenko;
 
+import com.divashchenko.Shapes.Board;
+import com.divashchenko.Shapes.Moves;
+import com.divashchenko.Technical.Logger;
 import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -118,7 +119,6 @@ public class Main extends Application {
 
     private void drawFrame() {
         board.draw();
-        //board.move();
     }
 
 }

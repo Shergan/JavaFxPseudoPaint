@@ -1,5 +1,6 @@
-package com.divashchenko;
+package com.divashchenko.Shapes;
 
+import com.divashchenko.Shapes.*;
 import javafx.scene.canvas.GraphicsContext;
 
 import java.util.ArrayList;
