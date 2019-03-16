@@ -109,6 +109,41 @@ public class Board {
         }
     }
 
+    public void merge(int findX, int findY) {
+        for (int i = 0; i < shapes.size(); i++) {
+            if (shapes.get(i) != mainFigure) {
+                if ()
+            }
+        }
+    }
+
+    private void addToGroup(Figure figure) {
+        if ((mainFigure instanceof Group) && (figure instanceof Group)) {
+            for (int i = 0; i < ((Group) figure).shapesInGroup.size(); i++) {
+                ((Group) mainFigure).addToGroup(((Group) figure).shapesInGroup.get(i));
+            }
+            shapes.remove(figure);
+        } else if (mainFigure instanceof Group) {
+            ((Group) mainFigure).addToGroup(figure);
+            shapes.remove(figure);
+        } else if (figure instanceof Group) {
+            ((Group) figure).addToGroup(mainFigure);
+            shapes.remove(mainFigure);
+            mainFigure = figure;
+        } else {
+            Group group = new Group();
+
+            group.addToGroup(mainFigure);
+            shapes.remove(mainFigure);
+
+            group.addToGroup(figure);
+            shapes.remove(figure);
+
+            shapes.add(group);
+            mainFigure = group;
+        }
+    }
+
     private void clean() {
         gc.clearRect(0, 0, gc.getCanvas().getWidth(), gc.getCanvas().getHeight());
     }
