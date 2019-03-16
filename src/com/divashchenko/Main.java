@@ -2,9 +2,11 @@ package com.divashchenko;
 
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -83,6 +85,12 @@ public class Main extends Application {
                     board.resizeMinus();
                     Logger.log("resize -");
                     break;
+            }
+        });
+
+        scene.setOnMousePressed(event -> {
+            if (event.isControlDown()) {
+                board.merge();
             }
         });
 
