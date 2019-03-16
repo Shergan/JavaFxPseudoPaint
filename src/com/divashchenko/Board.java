@@ -110,11 +110,32 @@ public class Board {
     }
 
     public void merge(int findX, int findY) {
-        for (int i = 0; i < shapes.size(); i++) {
-            if (shapes.get(i) != mainFigure) {
-                if ()
+        for (Shape shape : shapes) {
+            if (shape == mainFigure) {
+                continue;
+            }
+
+            if (!(shape instanceof Group)) {
+                if (checkDistance((Figure) shape, findX, findY)) {
+                    addToGroup((Figure) shape);
+                    break;
+                }
+            } else {
+                for (int j = 0; j < ((Group) shape).shapesInGroup.size(); j++) {
+                    if (checkDistance(((Group) shape).shapesInGroup.get(j), findX, findY)) {
+                        addToGroup((Figure) shape);
+                        break;
+                    }
+                }
             }
         }
+    }
+
+    private boolean checkDistance(Figure figure, int findX, int findY) {
+        return figure.getX() <= findX
+                && figure.getX() + figure.getDiameter() >= findX
+                && figure.getY() <= findY
+                && figure.getY() + figure.getDiameter() >= findY;
     }
 
     private void addToGroup(Figure figure) {
@@ -131,7 +152,7 @@ public class Board {
             shapes.remove(mainFigure);
             mainFigure = figure;
         } else {
-            Group group = new Group();
+            Group group = new Group(gc, 0, 0, null);
 
             group.addToGroup(mainFigure);
             shapes.remove(mainFigure);

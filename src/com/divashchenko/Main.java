@@ -90,7 +90,7 @@ public class Main extends Application {
 
         scene.setOnMousePressed(event -> {
             if (event.isControlDown()) {
-                board.merge();
+                board.merge((int) event.getSceneX(), (int) event.getSceneY());
             }
         });
 
