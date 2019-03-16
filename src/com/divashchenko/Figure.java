@@ -25,6 +25,9 @@ public abstract class Figure implements Shape {
         this.diameter = figure.diameter;
     }
 
+    protected Figure() {
+    }
+
     @Override
     public void move(Moves moves) {
         switch (moves) {
@@ -49,6 +52,18 @@ public abstract class Figure implements Shape {
                 }
                 break;
         }
+    }
+
+    public double getDiameter() {
+        return diameter;
+    }
+
+    public double getX() {
+        return x;
+    }
+
+    public double getY() {
+        return y;
     }
 
     @Override
