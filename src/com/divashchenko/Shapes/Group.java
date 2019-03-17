@@ -25,6 +25,23 @@ public class Group extends Figure {
         minX = gc.getCanvas().getWidth();
     }
 
+    public Group(Figure figure) {
+        this(figure.gc, 0, 0, figure.shapes);
+        for (int i = 0; i < ((Group) figure).shapesInGroup.size(); i++) {
+            Figure tmpFigure = ((Group) figure).shapesInGroup.get(i);
+
+            if (tmpFigure instanceof Ball) {
+                addToGroup(new Ball(tmpFigure));
+            } else if (tmpFigure instanceof Square) {
+                addToGroup(new Square(tmpFigure));
+            } else if (tmpFigure instanceof Triangle) {
+                addToGroup(new Triangle(tmpFigure));
+            } else if (tmpFigure instanceof Group) {
+                addToGroup(new Group(tmpFigure));
+            }
+        }
+    }
+
     @Override
     public void draw() {
         for (Figure figure : shapesInGroup) {

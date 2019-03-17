@@ -92,6 +92,8 @@ public class Board {
                 shapes.add(new Square(mainFigure));
             } else if (mainFigure instanceof Triangle) {
                 shapes.add(new Triangle(mainFigure));
+            } else if (mainFigure instanceof Group) {
+                shapes.add(new Group(mainFigure));
             }
             mainFigure = (Figure) shapes.get(shapes.size() - 1);
         }
