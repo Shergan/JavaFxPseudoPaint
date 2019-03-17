@@ -2,6 +2,7 @@ package com.divashchenko;
 
 import com.divashchenko.Technical.Moves;
 import com.divashchenko.Technical.Logger;
+import com.google.gson.Gson;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Scene;
@@ -84,6 +85,14 @@ public class Main extends Application {
                 case PAGE_DOWN:
                     board.resize(false);
                     Logger.log("resize -");
+                    break;
+                case S:
+                    board.save();
+                    Logger.log("Saved");
+                    break;
+                case L:
+                    board.load();
+                    Logger.log("Loaded");
                     break;
             }
         });

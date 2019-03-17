@@ -16,7 +16,7 @@ public class Group extends Figure {
     protected double minY;
     protected double diameterX;
     protected double diameterY;
-    protected GraphicsContext gc;
+    protected transient GraphicsContext gc;
 
     public Group(GraphicsContext gc, double x, double y, List<Shape> shapes) {
         super(gc, x, y, shapes);
