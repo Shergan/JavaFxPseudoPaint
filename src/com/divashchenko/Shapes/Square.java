@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Square extends Figure {
 
-    Square(GraphicsContext gc, double x, double y, List<Shape> shapes) {
+    public Square(GraphicsContext gc, double x, double y, List<Shape> shapes) {
         super(gc, x, y, shapes);
     }
 

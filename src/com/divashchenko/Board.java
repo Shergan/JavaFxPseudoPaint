@@ -1,6 +1,7 @@
-package com.divashchenko.Shapes;
+package com.divashchenko;
 
 import com.divashchenko.Shapes.*;
+import com.divashchenko.Technical.Moves;
 import javafx.scene.canvas.GraphicsContext;
 
 import java.util.ArrayList;
@@ -96,16 +97,12 @@ public class Board {
         }
     }
 
-    public void resizePlus() {
+    public void resize(boolean type) {
         if (mainFigure != null) {
-            mainFigure.diameter += 5;
-        }
-    }
-
-    public void resizeMinus() {
-        if (mainFigure != null) {
-            if (mainFigure.diameter > 5) {
-                mainFigure.diameter -= 5;
+            if (type) {
+                mainFigure.resize(true);
+            } else {
+                mainFigure.resize(false);
             }
         }
     }
@@ -122,8 +119,8 @@ public class Board {
                     break;
                 }
             } else {
-                for (int j = 0; j < ((Group) shape).shapesInGroup.size(); j++) {
-                    if (checkDistance(((Group) shape).shapesInGroup.get(j), findX, findY)) {
+                for (int j = 0; j < ((Group) shape).getShapesInGroup().size(); j++) {
+                    if (checkDistance(((Group) shape).getShapesInGroup().get(j), findX, findY)) {
                         addToGroup((Figure) shape);
                         break;
                     }
@@ -141,8 +138,8 @@ public class Board {
 
     private void addToGroup(Figure figure) {
         if ((mainFigure instanceof Group) && (figure instanceof Group)) {
-            for (int i = 0; i < ((Group) figure).shapesInGroup.size(); i++) {
-                ((Group) mainFigure).addToGroup(((Group) figure).shapesInGroup.get(i));
+            for (int i = 0; i < ((Group) figure).getShapesInGroup().size(); i++) {
+                ((Group) mainFigure).addToGroup(((Group) figure).getShapesInGroup().get(i));
             }
             shapes.remove(figure);
         } else if (mainFigure instanceof Group) {

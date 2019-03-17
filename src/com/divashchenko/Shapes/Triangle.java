@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Triangle extends Figure {
 
-    Triangle(GraphicsContext gc, double x, double y, List<Shape> shapes) {
+    public Triangle(GraphicsContext gc, double x, double y, List<Shape> shapes) {
         super(gc, x, y, shapes);
     }
 

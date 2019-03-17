@@ -1,5 +1,6 @@
 package com.divashchenko.Shapes;
 
+import com.divashchenko.Technical.Moves;
 import javafx.scene.canvas.GraphicsContext;
 
 import java.util.ArrayList;
@@ -78,6 +79,10 @@ public class Group extends Figure {
                 }
                 break;
         }
+    }
+
+    public List<Figure> getShapesInGroup() {
+        return shapesInGroup;
     }
 
     public void addToGroup(Figure figure) {

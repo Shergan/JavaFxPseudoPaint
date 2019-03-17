@@ -1,7 +1,6 @@
 package com.divashchenko;
 
-import com.divashchenko.Shapes.Board;
-import com.divashchenko.Shapes.Moves;
+import com.divashchenko.Technical.Moves;
 import com.divashchenko.Technical.Logger;
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -79,11 +78,11 @@ public class Main extends Application {
                     Logger.log("Figure copy");
                     break;
                 case PAGE_UP:
-                    board.resizePlus();
+                    board.resize(true);
                     Logger.log("resize +");
                     break;
                 case PAGE_DOWN:
-                    board.resizeMinus();
+                    board.resize(false);
                     Logger.log("resize -");
                     break;
             }

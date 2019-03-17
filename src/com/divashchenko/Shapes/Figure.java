@@ -1,5 +1,6 @@
 package com.divashchenko.Shapes;
 
+import com.divashchenko.Technical.Moves;
 import javafx.scene.canvas.GraphicsContext;
 
 import java.util.List;
@@ -20,12 +21,12 @@ public abstract class Figure implements Shape {
         this.shapes = shapes;
     }
 
-    protected Figure(Figure figure) {
+    public Figure(Figure figure) {
         this(figure.gc, figure.x, figure.y, figure.shapes);
         this.diameter = figure.diameter;
     }
 
-    protected Figure() {
+    public Figure() {
     }
 
     @Override
@@ -51,6 +52,16 @@ public abstract class Figure implements Shape {
                     x -= 5;
                 }
                 break;
+        }
+    }
+
+    public void resize(boolean type) {
+        if (type) {
+            diameter += 5;
+        } else {
+            if (diameter > 5) {
+                diameter -= 5;
+            }
         }
     }
 

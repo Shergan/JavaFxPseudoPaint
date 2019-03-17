@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Ball extends Figure {
 
-    Ball(GraphicsContext gc, double x, double y, List<Shape> shapes) {
+    public Ball(GraphicsContext gc, double x, double y, List<Shape> shapes) {
         super(gc, x, y, shapes);
     }
 
