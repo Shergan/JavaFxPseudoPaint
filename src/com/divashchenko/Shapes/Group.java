@@ -81,6 +81,18 @@ public class Group extends Figure {
         }
     }
 
+    @Override
+    public void resize(boolean type) {
+        for (Figure figure : shapesInGroup) {
+            if (!type && figure.diameter > 5) {
+                figure.diameter -= 5;
+            } else if (type) {
+                figure.diameter += 5;
+            }
+        }
+    }
+
+
     public List<Figure> getShapesInGroup() {
         return shapesInGroup;
     }
