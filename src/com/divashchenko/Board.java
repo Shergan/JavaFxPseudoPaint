@@ -62,9 +62,9 @@ public class Board {
 
     public void changeFigure() {
         if (mainFigure != null && shapes.size() > 1) {
-            try {
+            if (shapes.size() > shapes.indexOf(mainFigure) + 1) {
                 mainFigure = (Figure) shapes.get(shapes.indexOf(mainFigure) + 1);
-            } catch (IndexOutOfBoundsException e) {
+            } else {
                 mainFigure = (Figure) shapes.get(0);
             }
         }
@@ -72,16 +72,11 @@ public class Board {
 
     public void deleteFigure() {
         if (mainFigure != null && shapes.size() > 0) {
-            try {
-                Figure tmp = mainFigure;
-                shapes.remove(mainFigure);
-                if (shapes.size() > 0) {
-                    mainFigure = (Figure) shapes.get(shapes.indexOf(tmp) + 1);
-                } else {
-                    clean();
-                }
-            } catch (IndexOutOfBoundsException e) {
+            shapes.remove(mainFigure);
+            if (shapes.size() > 0) {
                 mainFigure = (Figure) shapes.get(0);
+            } else {
+                clean();
             }
         }
     }
