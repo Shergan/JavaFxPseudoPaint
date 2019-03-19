@@ -7,6 +7,8 @@ import java.util.List;
 
 public abstract class Figure implements Shape {
 
+    protected String name = this.getClass().getSimpleName();
+
     protected double diameter = 30;
 
     protected transient GraphicsContext gc;

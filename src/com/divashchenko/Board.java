@@ -1,9 +1,18 @@
 package com.divashchenko;
 
+import com.divashchenko.Save.Save;
 import com.divashchenko.Shapes.*;
 import com.divashchenko.Technical.Moves;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import javafx.scene.canvas.GraphicsContext;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -127,10 +136,31 @@ public class Board {
     }
 
     public void save() {
+        Save save = new Save(shapes, shapes.indexOf(mainFigure));
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        String json = gson.toJson(save);
 
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("save.txt"))) {
+            bw.write(json);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void load() {
+        try {
+            String fileString = new String(Files.readAllBytes(Paths.get("save.txt")), StandardCharsets.UTF_8);
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+            Save save = gson.fromJson(fileString, Save.class);
+            shapes = save.getShapeList();
+            mainFigure = (Figure) shapes.get(save.getMainFigureIndex());
+            draw();
+
+            //TODO fix loader
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
