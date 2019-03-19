@@ -114,20 +114,20 @@ public class Board {
     }
 
     public void merge(int findX, int findY) {
-        for (Shape shape : shapes) {
-            if (shape == mainFigure) {
+        for (int i = shapes.size() - 1; i >= 0; i--) {
+            if (shapes.get(i) == mainFigure) {
                 continue;
             }
 
-            if (!(shape instanceof Group)) {
-                if (checkDistance((Figure) shape, findX, findY)) {
-                    addToGroup((Figure) shape);
+            if (!(shapes.get(i) instanceof Group)) {
+                if (checkDistance((Figure) shapes.get(i), findX, findY)) {
+                    addToGroup((Figure) shapes.get(i));
                     break;
                 }
             } else {
-                for (int j = 0; j < ((Group) shape).getShapesInGroup().size(); j++) {
-                    if (checkDistance(((Group) shape).getShapesInGroup().get(j), findX, findY)) {
-                        addToGroup((Figure) shape);
+                for (int j = 0; j < ((Group) shapes.get(i)).getShapesInGroup().size(); j++) {
+                    if (checkDistance(((Group) shapes.get(i)).getShapesInGroup().get(j), findX, findY)) {
+                        addToGroup((Figure) shapes.get(i));
                         break;
                     }
                 }

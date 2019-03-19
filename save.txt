@@ -1,6 +1,6 @@
 {
     "class": "com.divashchenko.Save.Save",
-    "mainFigureIndex": 2,
+    "mainFigureIndex": 0,
     "shapeList": [
         {
             "class": "com.divashchenko.Shapes.Group",
