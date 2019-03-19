@@ -3,8 +3,6 @@ package com.divashchenko;
 import com.divashchenko.Save.Save;
 import com.divashchenko.Shapes.*;
 import com.divashchenko.Technical.Moves;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import flexjson.JSONDeserializer;
 import flexjson.JSONSerializer;
 import javafx.scene.canvas.GraphicsContext;
