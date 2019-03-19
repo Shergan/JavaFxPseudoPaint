@@ -15,6 +15,9 @@ public class Square extends Figure {
         super(figure);
     }
 
+    public Square() {
+    }
+
     @Override
     public void draw() {
         gc.setFill(Color.GREEN);

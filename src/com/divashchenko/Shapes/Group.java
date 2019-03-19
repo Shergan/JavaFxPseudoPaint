@@ -42,6 +42,9 @@ public class Group extends Figure {
         }
     }
 
+    public Group() {
+    }
+
     @Override
     public void draw() {
         for (Figure figure : shapesInGroup) {
@@ -109,6 +112,67 @@ public class Group extends Figure {
         }
     }
 
+    public void setShapesInGroup(List<Figure> shapesInGroup) {
+        this.shapesInGroup = shapesInGroup;
+    }
+
+    public double getMaxX() {
+        return maxX;
+    }
+
+    public void setMaxX(double maxX) {
+        this.maxX = maxX;
+    }
+
+    public double getMaxY() {
+        return maxY;
+    }
+
+    public void setMaxY(double maxY) {
+        this.maxY = maxY;
+    }
+
+    public double getMinX() {
+        return minX;
+    }
+
+    public void setMinX(double minX) {
+        this.minX = minX;
+    }
+
+    public double getMinY() {
+        return minY;
+    }
+
+    public void setMinY(double minY) {
+        this.minY = minY;
+    }
+
+    public double getDiameterX() {
+        return diameterX;
+    }
+
+    public void setDiameterX(double diameterX) {
+        this.diameterX = diameterX;
+    }
+
+    public double getDiameterY() {
+        return diameterY;
+    }
+
+    public void setDiameterY(double diameterY) {
+        this.diameterY = diameterY;
+    }
+
+    @Override
+    public GraphicsContext getGc() {
+        return gc;
+    }
+
+    @Override
+    public void setGc(GraphicsContext gc) {
+        this.gc = gc;
+    }
 
     public List<Figure> getShapesInGroup() {
         return shapesInGroup;

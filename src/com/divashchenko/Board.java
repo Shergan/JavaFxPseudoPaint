@@ -5,6 +5,8 @@ import com.divashchenko.Shapes.*;
 import com.divashchenko.Technical.Moves;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import flexjson.JSONDeserializer;
+import flexjson.JSONSerializer;
 import javafx.scene.canvas.GraphicsContext;
 
 import java.io.BufferedWriter;
@@ -137,11 +139,12 @@ public class Board {
 
     public void save() {
         Save save = new Save(shapes, shapes.indexOf(mainFigure));
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        String json = gson.toJson(save);
+
+        JSONSerializer serializer = new JSONSerializer().prettyPrint(true);
+        String js = serializer.deepSerialize(save);
 
         try (BufferedWriter bw = new BufferedWriter(new FileWriter("save.txt"))) {
-            bw.write(json);
+            bw.write(js);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -150,12 +153,26 @@ public class Board {
     public void load() {
         try {
             String fileString = new String(Files.readAllBytes(Paths.get("save.txt")), StandardCharsets.UTF_8);
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-            Save save = gson.fromJson(fileString, Save.class);
-            shapes = save.getShapeList();
-            mainFigure = (Figure) shapes.get(save.getMainFigureIndex());
-            draw();
+            JSONDeserializer<Save> deserializer = new JSONDeserializer<>();
+            Save save2 = deserializer.deserialize(fileString);
+            List<Shape> shapesTmp = save2.getShapeList();
+
+            for (Shape shape : shapesTmp) {
+                if (shape instanceof Group) {
+                    ((Group) shape).setGc(gc);
+                    for (int j = 0; j < ((Group) shape).getShapesInGroup().size(); j++) {
+                        Figure tmpFigure = ((Group) shape).getShapesInGroup().get(j);
+                        tmpFigure.setGc(gc);
+                    }
+
+                    continue;
+                }
+                ((Figure) shape).setGc(gc);
+            }
+
+            shapes = shapesTmp;
+            mainFigure = (Figure) shapes.get(save2.getMainFigureIndex());
 
             //TODO fix loader
         } catch (IOException e) {

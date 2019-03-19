@@ -15,6 +15,9 @@ public class Triangle extends Figure {
         super(figure);
     }
 
+    public Triangle() {
+    }
+
     @Override
     public void draw() {
         gc.setFill(Color.BLUE);

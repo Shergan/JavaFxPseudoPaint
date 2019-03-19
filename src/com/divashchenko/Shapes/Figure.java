@@ -7,8 +7,6 @@ import java.util.List;
 
 public abstract class Figure implements Shape {
 
-    protected String name = this.getClass().getSimpleName();
-
     protected double diameter = 30;
 
     protected transient GraphicsContext gc;
@@ -77,6 +75,34 @@ public abstract class Figure implements Shape {
 
     public double getY() {
         return y;
+    }
+
+    public void setDiameter(double diameter) {
+        this.diameter = diameter;
+    }
+
+    public GraphicsContext getGc() {
+        return gc;
+    }
+
+    public void setGc(GraphicsContext gc) {
+        this.gc = gc;
+    }
+
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public void setY(double y) {
+        this.y = y;
+    }
+
+    public List<Shape> getShapes() {
+        return shapes;
+    }
+
+    public void setShapes(List<Shape> shapes) {
+        this.shapes = shapes;
     }
 
     @Override
