@@ -1,0 +1,70 @@
+{
+    "class": "com.divashchenko.Save.Save",
+    "mainFigureIndex": 2,
+    "shapeList": [
+        {
+            "class": "com.divashchenko.Shapes.Group",
+            "diameter": 30.0,
+            "diameterX": 30.0,
+            "diameterY": 30.0,
+            "maxX": 230.0,
+            "maxY": 185.0,
+            "minX": 80.0,
+            "minY": 100.0,
+            "shapesInGroup": [
+                {
+                    "class": "com.divashchenko.Shapes.Ball",
+                    "diameter": 30.0,
+                    "x": 200.0,
+                    "y": 185.0
+                },
+                {
+                    "class": "com.divashchenko.Shapes.Square",
+                    "diameter": 30.0,
+                    "x": 230.0,
+                    "y": 100.0
+                },
+                {
+                    "class": "com.divashchenko.Shapes.Ball",
+                    "diameter": 30.0,
+                    "x": 80.0,
+                    "y": 100.0
+                }
+            ],
+            "x": 0.0,
+            "y": 0.0
+        },
+        {
+            "class": "com.divashchenko.Shapes.Group",
+            "diameter": 30.0,
+            "diameterX": 30.0,
+            "diameterY": 30.0,
+            "maxX": 200.0,
+            "maxY": 355.0,
+            "minX": 65.0,
+            "minY": 175.0,
+            "shapesInGroup": [
+                {
+                    "class": "com.divashchenko.Shapes.Square",
+                    "diameter": 30.0,
+                    "x": 65.0,
+                    "y": 175.0
+                },
+                {
+                    "class": "com.divashchenko.Shapes.Square",
+                    "diameter": 30.0,
+                    "x": 200.0,
+                    "y": 355.0
+                }
+            ],
+            "x": 0.0,
+            "y": 0.0
+        },
+        {
+            "class": "com.divashchenko.Shapes.Triangle",
+            "diameter": 30.0,
+            "x": 135.0,
+            "y": 10.0
+        }
+    ]
+}
