@@ -2,10 +2,8 @@ package com.divashchenko;
 
 import com.divashchenko.Shapes.*;
 import com.divashchenko.Technical.Moves;
-import com.google.gson.Gson;
 import javafx.scene.canvas.GraphicsContext;
 
-import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -129,35 +127,11 @@ public class Board {
     }
 
     public void save() {
-        Gson gson = new Gson();
-
-        try (FileWriter file = new FileWriter("save.json")) {
-            for (int i = 0; i < shapes.size(); i++) {
-                file.write(gson.toJson(shapes.get(i).getClass().getName()));
-                String jsonShape = gson.toJson(shapes.get(i));
-                file.write(jsonShape);
-                file.write("\n");
-            }
-            String jsonMainFigure = gson.toJson(mainFigure);
-            file.write("MainFigure");
-            file.write(jsonMainFigure);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
 
     }
 
     public void load() {
-        Gson gson = new Gson();
 
-        try {
-            BufferedReader br = new BufferedReader(new FileReader("save.json"));
-
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
     }
 
     private boolean checkDistance(Figure figure, int findX, int findY) {

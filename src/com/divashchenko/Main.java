@@ -1,8 +1,7 @@
 package com.divashchenko;
 
-import com.divashchenko.Technical.Moves;
 import com.divashchenko.Technical.Logger;
-import com.google.gson.Gson;
+import com.divashchenko.Technical.Moves;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Scene;
